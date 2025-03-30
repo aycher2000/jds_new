@@ -4,12 +4,13 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/Providers';
 import Header from '@/components/Header';
+import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'JustDopeShop',
-  description: 'Your one-stop shop for all things dope',
+  description: 'Your one-stop destination for premium products and exclusive deals',
 };
 
 export default function RootLayout({
@@ -21,10 +22,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Header />
-          <main className="min-h-screen bg-[#1A1A1A] text-white">
-            {children}
-          </main>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
