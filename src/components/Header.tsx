@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ShoppingCart, Home, Store, CheckCircle, Info, Mail, LogIn, LogOut, User } from 'lucide-react';
@@ -244,4 +244,4 @@ export default function Header() {
       <div className="h-16" /> {/* Spacer to prevent content from hiding under fixed header */}
     </>
   );
-} 
+}
