@@ -10,7 +10,7 @@ const featuredProducts = [
   {
     id: '1',
     name: 'MPC Ring - Gold Edition',
-    description: 'Inspired by the legendary MPC (Music Production Center), this unique ring resembles the iconic MPC drum pad layout.',
+    description: 'Inspired by the legendary MPC 2000XL, this unique ring resembles the iconic MPC drum pad layout.',
     price: 29.99,
     image: '/images/products/mpc-ring/gold.jpg',
     category: 'Jewelry',
@@ -35,7 +35,7 @@ const featuredProducts = [
   {
     id: '2',
     name: 'MPC Ring - Silver Edition',
-    description: 'Inspired by the legendary MPC (Music Production Center), this unique ring resembles the iconic MPC drum pad layout.',
+    description: 'Inspired by the legendary MPC 2000XL, this unique ring resembles the iconic MPC drum pad layout.',
     price: 29.99,
     image: '/images/products/mpc-ring/silver.jpg',
     category: 'Jewelry',
@@ -60,7 +60,7 @@ const featuredProducts = [
   {
     id: '3',
     name: 'Sucker DJ Testing Kit',
-    description: 'Complete DJ equipment testing and maintenance kit for professionals.',
+    description: 'Complete fake/sucker DJ testing kit for professionals. Comes with a USB cord cutter!',
     price: 499.99,
     image: '/images/jds300.png',
     category: 'Audio',

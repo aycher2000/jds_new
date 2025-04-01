@@ -6,7 +6,7 @@ const products = [
   {
     id: '1',
     name: 'MPC Ring - Gold Edition',
-    description: 'Inspired by the legendary MPC (Music Production Center), this unique ring resembles the iconic MPC drum pad layout.',
+    description: 'Inspired by the legendary MPC (Music Production Center), this unique ring resembles the iconic MPC drum pad layout. Perfect for producers, DJs, and beatmakers who want to showcase their passion for music production. Made with high-quality materials that ensure durability and comfort for everyday wear.',
     price: 29.99,
     image: '/images/products/mpc-ring/gold.jpg',
     category: 'Jewelry',
@@ -31,7 +31,7 @@ const products = [
   {
     id: '2',
     name: 'MPC Ring - Silver Edition',
-    description: 'Inspired by the legendary MPC (Music Production Center), this unique ring resembles the iconic MPC drum pad layout.',
+    description: 'Inspired by the legendary MPC (Music Production Center), this unique ring resembles the iconic MPC drum pad layout. The sleek silver finish offers a modern, clean aesthetic suitable for any style. Each ring is carefully crafted to capture the essence of music production culture with attention to detail.',
     price: 29.99,
     image: '/images/products/mpc-ring/silver.jpg',
     category: 'Jewelry',
@@ -56,7 +56,7 @@ const products = [
   {
     id: '3',
     name: 'Sucker DJ Testing Kit',
-    description: 'Complete DJ equipment testing and maintenance kit for professionals.',
+    description: 'This testing kit will let you know immediatly if theres a sucker DJ in your midst. For an example, if you go to a Fingaz gig, the red lights will flash and tell you to bounce to a better venue that has quality DJs.',
     price: 499.99,
     image: '/images/jds300.png',
     category: 'Audio',
