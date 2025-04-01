@@ -5,6 +5,7 @@ import './globals.css';
 import { Providers } from '@/components/Providers';
 import Header from '@/components/Header';
 import Footer from '@/components/footer';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,6 +30,23 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 3000,
+              style: {
+                background: '#2A2A2A',
+                color: '#fff',
+                border: '1px solid #C4A484',
+              },
+              success: {
+                iconTheme: {
+                  primary: '#C4A484',
+                  secondary: '#fff',
+                },
+              },
+            }}
+          />
         </Providers>
       </body>
     </html>

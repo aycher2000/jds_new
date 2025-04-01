@@ -5,11 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ShoppingCart, Home, Store, CheckCircle, Info, Mail, LogIn, LogOut, User } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
+import { useCart } from '@/context/CartContext';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session, status } = useSession();
+  const { getItemCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,14 +87,19 @@ export default function Header() {
             {/* Auth and Cart Buttons */}
             <div className="flex items-center space-x-4">
               {/* Shopping Cart */}
-              <button 
+              <Link 
+                href="/cart"
                 className="text-white hover:text-[#C4A484] transition-colors relative group"
                 aria-label="Shopping Cart"
               >
                 <ShoppingCart className="w-6 h-6" />
-                <span className="absolute -top-2 -right-2 bg-[#C4A484] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                {getItemCount() > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[#C4A484] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {getItemCount()}
+                  </span>
+                )}
                 <div className="absolute -inset-2 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 blur"></div>
-              </button>
+              </Link>
 
               {/* Auth Button */}
               {status === 'loading' ? (

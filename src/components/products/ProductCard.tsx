@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ShoppingCart, Info, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useCart } from '@/context/CartContext';
+import toast from 'react-hot-toast';
 import {
   Card,
   CardContent,
@@ -35,6 +37,23 @@ export function ProductCard({
   inStock,
 }: ProductCardProps) {
   const [showDetails, setShowDetails] = useState(false);
+  const { addItem } = useCart();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent navigation when clicking the button
+    if (!inStock) return;
+
+    addItem({
+      id,
+      name,
+      price,
+      image,
+      quantity: 1,
+      description,
+    });
+
+    toast.success(`${name} added to cart!`);
+  };
 
   return (
     <Card className="group relative overflow-hidden bg-[#2A2A2A] border-[#3A3A3A] transition-all duration-300 hover:border-[#C4A484]/50 hover:shadow-xl">
@@ -75,6 +94,7 @@ export function ProductCard({
         <Button
           className="w-full sm:w-1/2 bg-[#C4A484] hover:bg-[#A67B5B] text-white transition-colors duration-300"
           disabled={!inStock}
+          onClick={handleAddToCart}
         >
           <ShoppingCart className="w-4 h-4 mr-2" />
           Add to Cart
@@ -133,6 +153,7 @@ export function ProductCard({
           <Button
             className="w-full bg-[#C4A484] hover:bg-[#A67B5B] text-white transition-colors duration-300"
             disabled={!inStock}
+            onClick={handleAddToCart}
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             Add to Cart
